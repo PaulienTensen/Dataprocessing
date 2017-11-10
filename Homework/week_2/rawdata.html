@@ -493,66 +493,66 @@
 				
 		// Get canvas 2d 
         if (canvas.getContext) {
-			var ctx = canvas.getContext('2d');
+		var ctx = canvas.getContext('2d');
 			
-			// Loop trough all data and draw lines from different temperatures
-			for (i = 0; i < DateTemp.length - 2; i++){
-				ctx.beginPath();
-				ctx.moveTo(xy[i]['x'],xy[i]['y']);
-				ctx.lineTo(xy[i+1]['x'],xy[i+1]['y']);
-				ctx.stroke();
-			};
-			
-			// Make Yas 
+		// Loop trough all data and draw lines from different temperatures
+		for (i = 0; i < DateTemp.length - 2; i++){
 			ctx.beginPath();
-			ctx.moveTo(50,50);
-			ctx.lineTo(50,420);
+			ctx.moveTo(xy[i]['x'],xy[i]['y']);
+			ctx.lineTo(xy[i+1]['x'],xy[i+1]['y']);
 			ctx.stroke();
+		};
 			
-			// Make Xas
-			ctx.beginPath();
-			ctx.moveTo(50,420);
-			ctx.lineTo(430,420);
-			ctx.stroke();
+		// Make Yas 
+		ctx.beginPath();
+		ctx.moveTo(50,50);
+		ctx.lineTo(50,420);
+		ctx.stroke();
 			
-			// Make int from 366/7, 7 staps at the y-as
-			x = parseInt(366/7);
-			t = 300;
-			a = 60;
+		// Make Xas
+		ctx.beginPath();
+		ctx.moveTo(50,420);
+		ctx.lineTo(430,420);
+		ctx.stroke();
 			
-			// Loop 8 times for 8 temperature points
-			for (i = 0; i < 8; i++)
-			{
-				ctx.front = "15px Arial";
-				ctx.fillText(t + ' -', 10, a);
-				a = a + x; 
-				t = t - 50;
-			}
+		// Make int from 366/7, 7 staps at the y-as
+		x = parseInt(366/7);
+		t = 300;
+		a = 60;
 			
-			// Make title
-			ctx.font = "20px Arial";
-			ctx.fillText("Maximum temperature in De Bilt",50,25);
+		// Loop 8 times for 8 temperature points
+		for (i = 0; i < 8; i++)
+		{
+			ctx.front = "15px Arial";
+			ctx.fillText(t + ' -', 10, a);
+			a = a + x; 
+			t = t - 50;
+		}
 			
-			ctx.front = "10px Arial";
-			ctx.fillText("Paulien Tensen", 80, 60); 
+		// Make title
+		ctx.font = "20px Arial";
+		ctx.fillText("Maximum temperature in De Bilt",50,25);
 			
-			// Make 12 different month places at x-as
-			a = 0;
-			b = 400/12;
+		ctx.front = "10px Arial";
+		ctx.fillText("Paulien Tensen", 80, 60); 
 			
-			// Loop trough the 12 months 
-			for (y = 0; y < 12; y++)
-			{
-				ctx.save();
-				ctx.translate(60, 490);
-				// Rotate text 
-				ctx.rotate(-0.5*Math.PI);
-				var text = "Month";
-				ctx.font = "15px Arial";
-				ctx.fillText(text, 10, a);
-				ctx.restore();
-				a = a+b;
-			}
+		// Make 12 different month places at x-as
+		a = 0;
+		b = 400/12;
+			
+		// Loop trough the 12 months 
+		for (y = 0; y < 12; y++)
+		{
+			ctx.save();
+			ctx.translate(60, 490);
+			// Rotate text 
+			ctx.rotate(-0.5*Math.PI);
+			var text = "Month";
+			ctx.font = "15px Arial";
+			ctx.fillText(text, 10, a);
+			ctx.restore();
+			a = a+b;
+		}
         }
 	
     </script>

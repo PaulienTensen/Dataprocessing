@@ -1,0 +1,26 @@
+var json = $.getJason (html)
+
+console.log(json.responsJSON)
+
+var request = new XMLHittrequest();
+
+var filename = 
+var response; 
+
+var request = new XMLHittrequest(); // je maak een instantie van het object aan. 
+
+request.onreadystatechange = function(){
+	if(this.readyState == 4 && this.status == 200) {
+		// request is succesfully 
+		respons = this.responsText; 
+
+		
+request.open("GET", filename); 
+request.send()
+
+console.log.this
+callbackExample(response); 
+var response = this.responseText; 
+console.log(JSON.parse(response)); 
+
+console.log(this)

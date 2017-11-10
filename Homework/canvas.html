@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type= "text/css">
+body{ margin: 40px; background:#666;}
+#myCanvas{ background: #FFF; border #000 1px solid; }
+</style>
+<script>
+function dwaw() {
+	var canvas = document.getElementById('myCanvas');
+	var ctx = canvas.getContext('2d');
+	
+	window.onload = function () {
+ 
+	var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Simple Line Chart"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",       
+		dataPoints: [
+			{ y: 450 },
+			{ y: 414},
+			{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	}]
+});
+chart.render();
+ 
+}						
+	
+}
+window.unload = dwaw; 
+</script>
+</head>
+<body>
+<canvas id=myCanvas" width="400" height="300"></canvas>
+</body>
+</html> 

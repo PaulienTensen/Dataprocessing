@@ -1,23 +1,30 @@
+/*
+Name: Paulien Tensen
+Week 3
+Course: Dataprocessing week 3
+
+This is the css file. It changes the looks of the html file.
+
+*/
 .bar{
-	fill: #00BFFF;
+	fill: #00BFFF; /* change color of bars to LightSeaBlue   */
 }
 
 .bar:hover{
-	fill: #87CEEB;
+	fill: #87CEEB; /* Change color of clicked bar to SeaBlue */
 }
 
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges;
+  shape-rendering: crispEdges; /* Thin lines of the axis  */
 }
 
 .d3-tip {
   line-height: 1,5;
-  
   padding: 5px;
   background: white;
   color: black;
-  border-radius: 20px;
+  border-radius: 20px; /* Change text box of 3d Tool tip  */
 }

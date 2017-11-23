@@ -1,0 +1,16 @@
+/*
+Name: Paulien Tensen
+Week 4
+Course: Dataprocessing
+
+This is the css file. It changes the looks of the scatterplot file.
+
+*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges; /* Thin lines of the axis  */
+}
+
+

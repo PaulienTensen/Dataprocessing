@@ -1,0 +1,42 @@
+[
+    {
+        "MortalityRate": " 61.9", 
+        "Region": "Africa", 
+        "Deaths": " 40800"
+    }, 
+    {
+        "MortalityRate": " 172.2", 
+        "Region": "North America", 
+        "Deaths": " 55300"
+    }, 
+    {
+        "MortalityRate": " 14.9", 
+        "Region": "Latin America and the Caribbean", 
+        "Deaths": " 5000"
+    }, 
+    {
+        "MortalityRate": " 22.5", 
+        "Region": "Asia", 
+        "Deaths": " 66100"
+    }, 
+    {
+        "MortalityRate": " 26.4", 
+        "Region": "Western and Central Europe", 
+        "Deaths": " 8400"
+    }, 
+    {
+        "MortalityRate": " 55.6", 
+        "Region": "Eastern and South-Eastern Europe", 
+        "Deaths": " 12600"
+    }, 
+    {
+        "MortalityRate": " 102.3", 
+        "Region": "Oceania", 
+        "Deaths": " 2600"
+    }, 
+    {
+        "MortalityRate": " 39.6", 
+        "Region": "Global", 
+        "Deaths": " 109900"
+    }
+]

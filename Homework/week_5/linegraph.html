@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--Paulien Tensen, 10811559, Dataprocessing: week 5. 
+	This program makes a line graph for max temp, min temp and average temp. 
+    Year: 2015/2016.
+  -->
+<html>
+<head>
+    <h1> Temperature in De Bilt</h1>
+    <h2> (0,1 degrees Celcius) </h2>
+	<h3> Paulien Tensen </h3>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <a href="http://projects.knmi.nl/klimatologie/daggegevens/selectie.cgi"><h5>Source: KNMI </h5> </a>
+    <meta charset="utf-8">
+		<div class = "Line graph"></div>
+            <link rel="stylesheet" type="text/css" href="linegraph.css">
+			<script src="https://d3js.org/d3.v3.min.js">></script>
+			<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+			<script src="linegraph.js"></script>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Choose year
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li i= "2015" role="presentation"><a role="menuitem" tabindex="-1" href="#">2015</a></li>
+                <li id = "2016" role="presentation"><a role="menuitem" tabindex="-1" href="#">2016</a></li>   
+            </ul>
+        </div> 
+</head>  
+</html>

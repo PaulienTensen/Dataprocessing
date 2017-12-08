@@ -1,0 +1,152 @@
+[
+    {
+        "categorie": "Mexico", 
+        "values": [
+            {
+                "value": 2, 
+                "rate": "Cannabis"
+            }, 
+            {
+                "value": 7, 
+                "rate": "Opioids"
+            }, 
+            {
+                "value": 3, 
+                "rate": "Cocaine"
+            }, 
+            {
+                "value": 4, 
+                "rate": "Amphetamine"
+            }, 
+            {
+                "value": 6, 
+                "rate": "Hallucinogens"
+            }
+        ]
+    }, 
+    {
+        "categorie": "Brazil", 
+        "values": [
+            {
+                "value": 2, 
+                "rate": "Cannabis"
+            }, 
+            {
+                "value": 4, 
+                "rate": "Opioids"
+            }, 
+            {
+                "value": 1, 
+                "rate": "Cocaine"
+            }, 
+            {
+                "value": 6, 
+                "rate": "Amphetamine"
+            }, 
+            {
+                "value": 3, 
+                "rate": "Hallucinogens"
+            }
+        ]
+    }, 
+    {
+        "categorie": "Australia", 
+        "values": [
+            {
+                "value": 4, 
+                "rate": "Cannabis"
+            }, 
+            {
+                "value": 1, 
+                "rate": "Opioids"
+            }, 
+            {
+                "value": 5, 
+                "rate": "Cocaine"
+            }, 
+            {
+                "value": 3, 
+                "rate": "Amphetamine"
+            }, 
+            {
+                "value": 0, 
+                "rate": "Hallucinogens"
+            }
+        ]
+    }, 
+    {
+        "categorie": "France", 
+        "values": [
+            {
+                "value": 2, 
+                "rate": "Cannabis"
+            }, 
+            {
+                "value": 1, 
+                "rate": "Opioids"
+            }, 
+            {
+                "value": 3, 
+                "rate": "Cocaine"
+            }, 
+            {
+                "value": 4, 
+                "rate": "Amphetamine"
+            }, 
+            {
+                "value": 6, 
+                "rate": "Hallucinogens"
+            }
+        ]
+    }, 
+    {
+        "categorie": "Turkey", 
+        "values": [
+            {
+                "value": 3, 
+                "rate": "Cannabis"
+            }, 
+            {
+                "value": 1, 
+                "rate": "Opioids"
+            }, 
+            {
+                "value": 5, 
+                "rate": "Cocaine"
+            }, 
+            {
+                "value": 4, 
+                "rate": "Amphetamine"
+            }, 
+            {
+                "value": 0, 
+                "rate": "Hallucinogens"
+            }
+        ]
+    }, 
+    {
+        "categorie": "Slovakia", 
+        "values": [
+            {
+                "value": 5, 
+                "rate": "Cannabis"
+            }, 
+            {
+                "value": 2, 
+                "rate": "Opioids"
+            }, 
+            {
+                "value": 6, 
+                "rate": "Cocaine"
+            }, 
+            {
+                "value": 3, 
+                "rate": "Amphetamine"
+            }, 
+            {
+                "value": 7, 
+                "rate": "Hallucinogens"
+            }
+        ]
+    }
+]

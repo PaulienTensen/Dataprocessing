@@ -1,0 +1,81 @@
+[
+    {
+        "categorie": "Mexico", 
+        "values": [
+            {
+                "value": 378, 
+                "rate": "2015"
+            }, 
+            {
+                "value": 400, 
+                "rate": "2016"
+            } 
+           
+        ]
+    }, 
+    {
+        "categorie": "Brazil", 
+        "values": [
+            {
+                "value": 200, 
+                "rate": "2015"
+            }, 
+            {
+                "value": 400, 
+                "rate": "2016"
+            } 
+        ]
+    }, 
+    {
+        "categorie": "Australia", 
+        "values": [
+            {
+                "value": 1808, 
+                "rate": "2015"
+            }, 
+            {
+                "value": 1200, 
+                "rate": "2016"
+            } 
+        ]
+    }, 
+    {
+        "categorie": "France", 
+        "values": [
+            {
+                "value": 147, 
+                "rate": "2015"
+            }, 
+            {
+                "value": 400, 
+                "rate": "2016"
+            } 
+        ]
+    }, 
+    {
+        "categorie": "Turkey", 
+        "values": [
+            {
+                "value": 497, 
+                "rate": "2015"
+            }, 
+            {
+                "value": 400, 
+                "rate": "2016"
+            } 
+        ]
+    }, 
+    {
+        "categorie": "Slovakia", 
+        "values": [
+            {
+                "value": 48, 
+                "rate": "2015"
+            }, 
+            {
+                "value": 50, 
+                "rate": "2016"
+            } 
+        ]
+    }
+]

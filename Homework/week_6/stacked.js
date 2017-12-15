@@ -28,20 +28,15 @@ var x1 = d3.scale.ordinal();
 var y = d3.scale.linear().range([height, 0]);
 
 // Set X-Axis:
-var xAxis = d3.svg.axis()
-    .scale(x0)
-    .tickSize(0)
-    .orient("bottom");
+var xAxis = d3.svg.axis().scale(x0).tickSize(0).orient("bottom");
 
 // Set Y-Axis:
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left");
+var yAxis = d3.svg.axis().scale(y).orient("left");
 
 // Choose colours:
-var color = d3.scale.ordinal()
-    .range(["pink","tomato","red","DarkKhaki","MediumVioletRed"]);
+var color = d3.scale.ordinal().range(["pink","tomato","red","DarkKhaki","MediumVioletRed"]);
 
+// Instal tooltip:
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([0, 10])
@@ -49,40 +44,40 @@ var tip = d3.tip()
     return "Drug: " + d.rate+ " , "+ "Death-rate: "+ d.value  + "</span>";
   })
  
+// Set SVG:
 var svg = d3.select('body').append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
-    
+
+// Open two json files:
 var q = d3.queue()
-    .defer(d3.json, 'dataset.json') // dataset 
-    .defer(d3.json, 'rate.json') // rate 
-    .await(visualize); // function that uses files    
+    .defer(d3.json, 'dataset.json') 
+    .defer(d3.json, 'rate.json')  
+    .await(visualize);    
 
 svg.call(tip);     
  
-function visualize(error, data, rate) {    
+function visualize(error, data, rate) {  
+  if (error) throw error; 
   
   var catNames = data.map(function(d) { return d.categorie; });
   var ratNames = data[0].values.map(function(d) { return d.rate; });
-  
-   //console.log(data[0])
-   console.log(rate[0])
-    //console.log(rate[0])
    
+  // Set domain:
   x0.domain(catNames);
   x1.domain(ratNames).rangeRoundBands([0, x0.rangeBand()]);
   y.domain([0, d3.max(data, function(categorie) { 
     return d3.max(categorie.values, function(d) { return d.value; }); })]);
 
-  // Enter this function when the dropdown menu is clicked. 
-    
+  // Append Xaxis: 
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
 
+  // Append Yaxis:
   svg.append("g")
       .attr("class", "y axis")
       .style('opacity','0')
@@ -93,9 +88,10 @@ function visualize(error, data, rate) {
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Death rate");
-
+  
   svg.select('.y').transition().duration(500).delay(1300).style('opacity','1');
      
+  // Make bars:
   var slice = svg.selectAll(".slice")
       .data(data)
       .enter().append("g")
@@ -103,6 +99,7 @@ function visualize(error, data, rate) {
       .attr("id", function(d) {console.log(d); return d.categorie})
       .attr("transform",function(d) { return "translate(" + x0(d.categorie) + ",0)"; });
 
+  // On mouseclick show data, set opactity standard to 0,1:
   var bar = slice.selectAll("rect")
       .data(function(d) { return d.values; })
   .enter().append("rect")
@@ -120,7 +117,8 @@ function visualize(error, data, rate) {
       })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
-      
+   
+  // Make delay function for the bars:  
   slice.selectAll("rect")
       .transition()
       .delay(function (d) {return Math.random()*1000;})
@@ -151,29 +149,32 @@ function visualize(error, data, rate) {
       .style("text-anchor", "end")
       .text(function(d) {return d; });
 
+  // Set opacity to 1 of legend:
   legend.transition().duration(500).delay(function(d,i){ return 1300 + 100 * i; }).style("opacity","1"); 
 
+  // Select all bubbles, show bars on click:
   d3.selectAll(".datamaps-bubble")
     .on('click', function(data, bubble, country, categorie) {
-    d3.select("#Australia").selectAll("rect").style("opacity", "1")
-    d3.select("#Brazil").selectAll("rect").style("opacity", "1")
-    d3.select("#Australia").selectAll("rect").style("opacity", "1")
-    d3.select("#Mexico").selectAll("rect").style("opacity", "1")
-    d3.select("#France").selectAll("rect").style("opacity", "1")
-    d3.select("#Slovakia").selectAll("rect").style("opacity", "1")
-    d3.select("#Turkey").selectAll("rect").style("opacity", "1")
+        d3.select("#Australia").selectAll("rect").style("opacity", "1")
+        d3.select("#Brazil").selectAll("rect").style("opacity", "1")
+        d3.select("#Australia").selectAll("rect").style("opacity", "1")
+        d3.select("#Mexico").selectAll("rect").style("opacity", "1")
+        d3.select("#France").selectAll("rect").style("opacity", "1")
+        d3.select("#Slovakia").selectAll("rect").style("opacity", "1")
+        d3.select("#Turkey").selectAll("rect").style("opacity", "1")
     })
     
+    // On dubble click, hide bars:
     .on("dblclick", function(data, bubble, country, categorie) {
-    d3.select("#Australia").selectAll("rect").style("opacity", "0.1")
-    d3.select("#Brazil").selectAll("rect").style("opacity", "0.1")
-    d3.select("#Mexico").selectAll("rect").style("opacity", "0.1")
-    d3.select("#France").selectAll("rect").style("opacity", "0.1")
-    d3.select("#Slovakia").selectAll("rect").style("opacity", "0.1")
-    d3.select("#Turkey").selectAll("rect").style("opacity", "0.1")
-
+        d3.select("#Australia").selectAll("rect").style("opacity", "0.1")
+        d3.select("#Brazil").selectAll("rect").style("opacity", "0.1")
+        d3.select("#Mexico").selectAll("rect").style("opacity", "0.1")
+        d3.select("#France").selectAll("rect").style("opacity", "0.1")
+        d3.select("#Slovakia").selectAll("rect").style("opacity", "0.1")
+        d3.select("#Turkey").selectAll("rect").style("opacity", "0.1")
     });
     
+    // Select show all bars button:
     d3.selectAll(".btn1").on("click", function() {
         d3.select("#Australia").selectAll("rect").style("opacity", "1")
         d3.select("#Brazil").selectAll("rect").style("opacity", "1")
@@ -184,6 +185,7 @@ function visualize(error, data, rate) {
         d3.select("#Turkey").selectAll("rect").style("opacity", "1")
     });
     
+    // Select remove bars button:
     d3.selectAll(".btn2").on("click", function() {
         d3.select("#Australia").selectAll("rect").style("opacity", "0")
         d3.select("#Brazil").selectAll("rect").style("opacity", "0")
@@ -193,7 +195,6 @@ function visualize(error, data, rate) {
         d3.select("#Slovakia").selectAll("rect").style("opacity", "0")
         d3.select("#Turkey").selectAll("rect").style("opacity", "0")
     });
-   
     
     //var h = data[categorie.indexOf(d3.select(this).attr("title"))];
         //console.log(h) 
@@ -226,10 +227,7 @@ function visualize(error, data, rate) {
          //  d3.select("#Brazil").selectAll("rect").style("opacity", "1")
     //d3.select("#Mexico").selectAll("rect").style("opacity", "1")
     //console.log(bubble);
-    //});
-  
-  
-  
+    //});  
 }
 // Dropdown menu Jquery:
 $('.dropdown-toggle').dropdown();

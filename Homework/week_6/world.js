@@ -1,13 +1,13 @@
 /*
-
 Naam: Paulien Tensen
 Vak: Dataprocessing
 Studentnummer: 10511559
 
+Dit bestand laadt de wereldkaart in:
 bron: http://jsbin.com/nutawiboci/1/edit?html,output
 */
 
-//basic map config with custom fills, mercator projection
+// Map world:
 var map = new Datamap({
         scope: 'world',
         element: document.getElementById('container1'),
@@ -31,7 +31,7 @@ var map = new Datamap({
           TUR: {fillKey: 'gt50'},
           SVK: {fillKey: 'ss50' }      
         }
-})
+});
           
      //bubbles, custom popup on hover template
      map.bubbles([
@@ -44,6 +44,7 @@ var map = new Datamap({
 
      ], {
        
+       // Popup on mouseover:
        popupTemplate: function(geo, data) {
        return "<div class='hoverinfo'>" + data.country + ":  " + data.name + "</div>";
        }

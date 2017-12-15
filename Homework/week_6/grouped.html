@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<!--Paulien Tensen, 10811559, Dataprocessing: week 4.  
+<!--Paulien Tensen, 10811559, Dataprocessing: week 6.  
   -->
 <html>
-<head>
-    <h1> Ranking of drugs as primary cause of death </h1>
-    <h2> Aged: 15-64 </h2>
-	<h3> Paulien Tensen </h3>
-    <a href="https://data.unodc.org/#state:15"><h5>Source: UNODC statistics - Mortality-National data</h5> </a>
-    <meta charset="utf-8">
-		<div class = "stacked"></div>
-            
-			<script src="https://d3js.org/d3.v3.min.js"></script>
-			<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <head>
+        <title> Drugs as primary course of death </title>
+            <h1> Ranking of drugs as primary cause of death </h1>
+            <h2> People aged: 15-64 </h2>
+            <h3> Paulien Tensen </h3>
+            <a href="https://data.unodc.org/#state:15"><h5>Source: UNODC statistics - Mortality-National data</h5> </a>
+            <meta charset="utf-8"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://d3js.org/d3.v3.min.js"></script>
+            <script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
             <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-			<script src="stacked.js"></script>
+            <script src="http://d3js.org/topojson.v1.min.js"></script>
+            <script src="datamaps.world.min.js"></script>
+            <script src="http://d3js.org/queue.v1.min.js"></script>
+            <script src="http://d3js.org/topojson.v1.min.js"></script>
+    </head>
+    <body>
+        <div class = "stacked"></div>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <div id="container1" style="position: relative; width: 80%; max-height: 450px;"></div>  
+            <script src="stacked.js"></script>
+            <script src="world.js"></script>
             <link rel="stylesheet" type="text/css" href="stacked.css">
-</head>  
+            <button type="button" class="btn1">Show all bars</button>
+            <button type="button" class="btn2">Remove all bars</button>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Click here for more information(Dutch only).
+                        <span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <li id="gone" role="presentation"><a role="menuitem" tabindex="-1" href="#"></a>
+                                <li>Drugs gebruik is wereldwijd een groot probleem. Drugs gebruik brengt namelijk grote gevaren met zich mee.</li>
+                                <li>Met behulp van deze visualisaties wil ik graag in kaart brengen hoeveel mensen er overlijden met het gevolg van drugs gebruik. </li>
+                                <li>Ik heb een aantal landen uit gekozen, waar genoeg data over te vinden was. </li>
+                                <li>Verder heb ik de deze landen uitgekozen om een wereldwijd beeld te scheppen van het doden aantal door drugs gebruik.</li>
+                                <li>Ik heb geprobeerd een grote variatie aan landen tegen elkaar uit te zetten. </li>
+                                </br>
+                                <b><li>Waarom heb ik deze landen gekozen?</li></b>
+                                <li>Mexico en Brazilië staan wereldwijd bekend als landen waar veel drugs voorkomen/worden gemaakt.</li> 
+                                <li>Australie en Frankrijk heb ik gekozen om ook welvarende landen tegen elkaar uit te zetten. </li>
+                                <li>Vervolgens vond ik het interessant om ook een oost Europees land te bekijken: Slowakije. </li>
+                                <li>En tot slot Turkije om ook een Islamitisch land in kaart te brengen.</li>
+                                <li>In deze visualisaties kijk ik naar gegevens over het aantal doden door drugsgebruik. Deze zijn te vinden op de landkaart. </li>
+                                <li>En in de histogrammen staat informatie over de specifiek gebruikte drug waaraan personen zijn overleden. </li>
+
+                                <b><li>Klik hier om informatie te sluiten</li></b> 
+                            </ul>
+                </div>
+</body>  
 </html>
 
 
